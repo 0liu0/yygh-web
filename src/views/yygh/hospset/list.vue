@@ -86,8 +86,8 @@ export default {
   methods: {
     fetchData(page = 1) {
       // 调用api层获取数据库中的数据
-      console.log("加载列表");
       this.page = page;
+      console.log("加载列表,当前page为："+this.page);
       this.listLoading = true;
       hospset
         .getHospitalPage(this.page, this.limit, this.searchObj)
@@ -114,7 +114,7 @@ export default {
     }).then(() => {
         return hospset.removeById(id)
     }).then(() => {
-        this.fetchData()
+        this.fetchData(this.page)
         this.$message({
             type: 'success',
             message: '删除成功!'
