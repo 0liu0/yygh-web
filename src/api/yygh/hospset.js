@@ -31,9 +31,23 @@ export default {
   },
   updateById(hospset) {
     return request({
-        url: `${api_name}/updateHospSet`,
-        method: 'post',
-        data: hospset
+      url: `${api_name}/updateHospSet`,
+      method: 'post',
+      data: hospset
     })
-}
+  },
+  removeRows(idList) {
+    return request({
+      url: `${api_name}/batchRemove`,
+      method: 'delete',
+      data: idList
+    })
+  },
+  //锁定和取消锁定
+  lockHospSet(id, status) {
+    return request({
+      url: `${api_name}/lockHospitalSet/${id}/${status}`,
+      method: 'put'
+    })
+  }
 }
