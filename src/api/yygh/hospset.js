@@ -12,8 +12,28 @@ export default {
   },
   removeById(id) {
     return request({
-        url: `${api_name}/${id}`,
-        method: 'delete'
+      url: `${api_name}/${id}`,
+      method: 'delete'
+    })
+  },
+  save(hospset) {
+    return request({
+      url: `${api_name}/saveHospSet`,
+      method: 'post',
+      data: hospset
+    })
+  },
+  getById(id) {
+    return request({
+      url: `${api_name}/getHospSet/${id}`,
+      method: 'get'
+    })
+  },
+  updateById(hospset) {
+    return request({
+        url: `${api_name}/updateHospSet`,
+        method: 'post',
+        data: hospset
     })
 }
 }
