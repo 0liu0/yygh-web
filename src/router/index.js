@@ -55,36 +55,52 @@ export const constantRoutes = [
     }]
   },
 
-    // 医院设置管理
-    {
-      path: '/yygh/hospset',
-      component: Layout,
-      redirect: '/yygh/hospset/list',
-      name: 'Teacher',
-      meta: { title: '医院管理',icon: 'el-icon-s-help'  },
-      children: [
-        {
-          path: 'list',
-          name: 'HospSetList',
-          component: () => import('@/views/yygh/hospset/list'),
-          meta: { title: '医院设置列表',icon: 'table'  }
-        },
-        {
-          path: 'create',
-          name: 'HospSetCreate',
-          component: () => import('@/views/yygh/hospset/form'),
-          meta: { title: '添加医院设置',icon: 'tree'  }
-        },
-        {
-          path: 'edit/:id',
-          name: 'HospSetEdit',
-          component: () => import('@/views/yygh/hospset/form'),
-          meta: { title: '编辑医院设置', noCache: true },
-          hidden: true
-        }
-      ]
-    },
-  
+  // 医院设置管理
+  {
+    path: '/yygh/hospset',
+    component: Layout,
+    redirect: '/yygh/hospset/list',
+    name: 'Teacher',
+    meta: { title: '医院管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: 'HospSetList',
+        component: () => import('@/views/yygh/hospset/list'),
+        meta: { title: '医院设置列表', icon: 'table' }
+      },
+      {
+        path: 'create',
+        name: 'HospSetCreate',
+        component: () => import('@/views/yygh/hospset/form'),
+        meta: { title: '添加医院设置', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: 'HospSetEdit',
+        component: () => import('@/views/yygh/hospset/form'),
+        meta: { title: '编辑医院设置', noCache: true },
+        hidden: true
+      }
+    ]
+  },
+  // 数据字典
+  {
+    path: '/cmn',
+    component: Layout,
+    redirect: '/cmn/list',
+    name: '数据管理',
+    alwaysShow: true,
+    meta: { title: '数据管理', icon: 'example' },
+    children: [
+      {
+        path: 'list',
+        name: '数据字典',
+        component: () => import('@/views/dict/list'),
+        meta: { title: '数据字典', icon: 'table' }
+      }
+    ]
+  },
 
   {
     path: '/example',
