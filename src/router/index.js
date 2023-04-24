@@ -101,7 +101,14 @@ export const constantRoutes = [
       }
     ]
   },
-
+  // 医院管理列表
+  {
+    path: '/hospital/list',
+    name: '医院列表',
+    component: Layout,
+    component: () => import('@/views/hosp/list'),
+    meta: { title: '医院列表', icon: 'table' }
+  },
   {
     path: '/example',
     component: Layout,
