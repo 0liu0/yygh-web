@@ -117,6 +117,14 @@ export const constantRoutes = [
     meta: { title: '查看', noCache: true },
     hidden: true
   },
+  // 医院排班
+  {
+    path: '/hospital/schedule/:hoscode',
+    name: '排班',
+    component: () => import('@/views/hosp/schedule'),
+    meta: { title: '排班', noCache: true },
+    hidden: true
+  },
   {
     path: '/example',
     component: Layout,
