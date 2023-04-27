@@ -138,8 +138,7 @@ export default {
       this.searchObj.cityCode = "";
       //调用方法，根据省id，查询下面子节点
       hospApi.findByParentId(this.searchObj.provinceCode).then(response => {
-        console.log(response.data.dictList);
-        this.cityList = response.data.dictList;
+        this.cityList = response.data.list;
       });
     },
     //分页，页码变化
