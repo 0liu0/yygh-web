@@ -151,6 +151,13 @@ export const constantRoutes = [
               meta: { title: '用户查看' },
                   hidden: true
 },
+// 审批列表
+{
+  path: '/userInfo/authList',
+  name: '认证审批列表',
+  component: () =>import('@/views/yygh/userInfo/authList'),
+  meta: { title: '认证审批列表', icon: 'table' }
+},
   {
     path: '/example',
     component: Layout,
