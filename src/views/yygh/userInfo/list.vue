@@ -56,6 +56,9 @@
             size="mini"
             @click="lock(scope.row.id, 1)"
           >取消锁定</el-button>
+          <router-link :to="'/userInfo/show/'+scope.row.id">
+            <el-button style="margin-left:10px" type="primary" size="mini">查看</el-button>
+          </router-link>
         </template>
       </el-table-column>
     </el-table>

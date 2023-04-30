@@ -142,6 +142,15 @@ export const constantRoutes = [
                                 }
                             ]
 },
+// 用户详情页
+{
+  path: '/userInfo/show/:id',
+  // redirect: '/yygh/userInfo/show',
+      name: 'usershow',
+          component: () =>import('@/views/yygh/userInfo/show'),
+              meta: { title: '用户查看' },
+                  hidden: true
+},
   {
     path: '/example',
     component: Layout,
