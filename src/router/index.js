@@ -128,36 +128,53 @@ export const constantRoutes = [
   // 用户管理模块
   {
     path: '/user',
-        component: Layout,
-            redirect: '/user/userInfo/list',
-                name: 'userInfo',
-                    meta: { title: '用户管理', icon: 'table' },
-                        alwaysShow: true,
-                            children: [
-                                {
-                                    path: 'userInfo/list',
-                                    name: '用户列表',
-                                    component: () =>import('@/views/yygh/userInfo/list'),
-                                    meta: { title: '用户列表', icon: 'table' }
-                                }
-                            ]
-},
-// 用户详情页
-{
-  path: '/userInfo/show/:id',
-  // redirect: '/yygh/userInfo/show',
-      name: 'usershow',
-          component: () =>import('@/views/yygh/userInfo/show'),
-              meta: { title: '用户查看' },
-                  hidden: true
-},
-// 审批列表
-{
-  path: '/userInfo/authList',
-  name: '认证审批列表',
-  component: () =>import('@/views/yygh/userInfo/authList'),
-  meta: { title: '认证审批列表', icon: 'table' }
-},
+    component: Layout,
+    redirect: '/user/userInfo/list',
+    name: 'userInfo',
+    meta: { title: '用户管理', icon: 'table' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'userInfo/list',
+        name: '用户列表',
+        component: () => import('@/views/yygh/userInfo/list'),
+        meta: { title: '用户列表', icon: 'table' }
+      }
+    ]
+  },
+  // 用户详情页
+  {
+    path: '/userInfo/show/:id',
+    // redirect: '/yygh/userInfo/show',
+    name: 'usershow',
+    component: () => import('@/views/yygh/userInfo/show'),
+    meta: { title: '用户查看' },
+    hidden: true
+  },
+  // 审批列表
+  {
+    path: '/userInfo/authList',
+    name: '认证审批列表',
+    component: () => import('@/views/yygh/userInfo/authList'),
+    meta: { title: '认证审批列表', icon: 'table' }
+  },
+  // 统计功能
+  {
+    path: '/statistics',
+    component: Layout,
+    redirect: '/statistics/order/index',
+    name: 'BasesInfo',
+    meta: { title: '统计管理', icon: 'table' },
+    alwaysShow: true,
+    children: [
+      {
+        path: 'order/index',
+        name: '预约统计',
+        component: () => import('@/views/yygh/sta/index'),
+        meta: { title: '预约统计' }
+      }
+    ]
+  },
   {
     path: '/example',
     component: Layout,
